@@ -1,6 +1,6 @@
 {
   "name": "prediction-sdk",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "SDK for prediction market trading including Polymarket, Kalshi, Limitless, and more",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
