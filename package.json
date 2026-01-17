@@ -1,58 +1,14 @@
 {
-  "name": "prediction-sdk",
-  "version": "1.0.3",
-  "description": "SDK for prediction market trading including Polymarket, Kalshi, Limitless, and more",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
-    }
-  },
-  "files": [
-    "dist",
-    "README.md"
+  "name": "tradeHelper",
+  "private": true,
+  "workspaces": [
+    "packages/*"
   ],
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
-    "prepublishOnly": "bun run build",
-    "version": "bun run build && git add -A dist",
-    "postversion": "git push && git push --tags",
-    "version:patch": "bun scripts/version.js patch",
-    "version:minor": "bun scripts/version.js minor",
-    "version:major": "bun scripts/version.js major",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "bun run --filter @tradeHelper/polymarket build",
+    "dev": "bun run --filter @tradeHelper/polymarket dev",
+    "test": "bun run --filter @tradeHelper/polymarket test",
+    "test:run": "bun run --filter @tradeHelper/polymarket test:run"
   },
-  "keywords": [
-    "prediction-markets",
-    "polymarket",
-    "kalshi",
-    "limitless",
-    "trading",
-    "sdk"
-  ],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/node": "^20.10.0",
-    "tsup": "^8.0.1",
-    "typescript": "^5.3.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/unodrop/prediction-sdk.git"
-  },
-  "packageManager": "bun@latest",
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "@polymarket/clob-client": "^5.2.1",
-    "@polymarket/order-utils": "^3.0.1",
-    "ethers": "^5.8.0"
-  }
+  "packageManager": "bun@latest"
 }

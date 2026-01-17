@@ -58,3 +58,16 @@ export const CTF_ABI = [
   "function setApprovalForAll(address operator, bool approved) external",
   "function isApprovedForAll(address account, address operator) view returns (bool)",
 ];
+
+
+
+export const SAFE_PROXY_FACTORY_ADDRESS = "0xaacFeEa03eb1561C4e67d661e40682Bd20E3541b";
+export const COMPUTE_PROXY_ADDRESS_FUNCTION_SIGNATURE =
+  "computeProxyAddress(address)";
+
+export const ERROR_CODES = {
+  RPC_REQUEST_FAILED: "RPC_REQUEST_FAILED",
+  RPC_RESPONSE_EMPTY: "RPC_RESPONSE_EMPTY",
+  RPC_ERROR: "RPC_ERROR",
+  RPC_INVALID_RESULT: "RPC_INVALID_RESULT",
+} as const;

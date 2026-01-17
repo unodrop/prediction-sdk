@@ -21,3 +21,31 @@ export interface PolymarketOptions {
   /** Optional CLOB API endpoint URL (defaults to https://clob.polymarket.com) */
   cLobHttpUrl?: string;
 }
+
+export type JsonRpcError = {
+  code: number;
+  message: string;
+  data?: unknown;
+};
+
+export type JsonRpcResponse = {
+  jsonrpc?: string;
+  result?: string;
+  error?: JsonRpcError;
+  id?: number;
+};
+
+export type EthCallParams = [
+  {
+    to: string;
+    data: string;
+  },
+  "latest"
+];
+
+export type JsonRpcRequest = {
+  jsonrpc: "2.0";
+  method: "eth_call";
+  params: EthCallParams;
+  id: number;
+};    
